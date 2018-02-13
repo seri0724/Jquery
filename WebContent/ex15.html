@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="/jqueryex/jquery/jquery-1.12.4.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<ul>
+		<li id="first" class="red">첫번째 아이템입니다.</li>
+		<li id="second" class="blue"><strong>두번째 아이템입니다.</strong></li>
+		<li id="third" class="del">세번째아이템입니다.</li>
+		<li><strong>네번째 아이템입니다.</strong></li>
+		
+	</ul>
+	<input id="btn" type="button" VALUE="li요소추가" />
+</body>
+
+<script type="text/javascript">
+	/* $("li").on("click", function() {
+		var $this = $(this);
+		var str = $this.text();
+		console.log(str);
+	}); */
+	$("#btn").on("click", function() {
+		$("ul").append("<li>다섯번째 아이템입니다.</li>")
+		$("ul").append("<li>여섯번째 아이템입니다.</li>")
+		$("ul").append("<li>일곱번째 아이템입니다.</li>")
+	});
+	$("ul").on("click", "li", function() { //ul이벤트를 받으면 li에게 전달
+		var $this = $(this);
+		var str = $this.text();
+		console.log(str);
+	});
+</script>
+
+</html>
